@@ -12,7 +12,7 @@ const Navbar = () => {
         {/* Logo + Menu Items in Same Line */}
         <div className="flex items-center gap-20">
           <h2 className="text-4xl font-bold">MWT</h2>
-          <ul className="hidden md:flex gap-16  items-center mt-3 text-lg "> 
+          <ul className="hidden md:flex gap-16  items-center mt-3 text-sm "> 
             <li><Link to="/" className="hover:text-purple-900 font-bold">HOME</Link></li>
             <li><Link to="/shop" className="hover:text-purple-900 font-bold">SHOP</Link></li>
             <li><Link to="/about" className="hover:text-purple-900 font-bold">ABOUT</Link></li>
