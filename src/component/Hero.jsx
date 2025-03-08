@@ -18,16 +18,8 @@ const Hero = () => {
     className="flex flex-col items-center justify-center h-screen  text-white text-center p-6 bg-cover opacity-80 bg-center bg-fixed transition-all duration-500 ease-in-out"
     style={{ backgroundImage: `url(${images[currentImage]})` }}
   >
-   <h2 className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight z-10 animate-gradient my-4">
-  <span className="bg-gradient-to-r from-gray-300 via-gray-600 to-black bg-clip-text text-transparent">
-    FASHING
-  </span>
-  <span className="mx-1 bg-gradient-to-r from-gray-300 via-gray-600 to-black bg-clip-text text-transparent">
-    CHANGING
-  </span>
-  <span className="mx-1 bg-gradient-to-r from-gray-300 via-gray-600 to-black bg-clip-text text-transparent">
-    ALWAYS
-  </span>
+   <h2 className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white my-4">
+  FASHION <span className="mx-1 text-white">CHANGING</span> <span className="text-black" > ALWAYS </span>
 </h2>
 
 
