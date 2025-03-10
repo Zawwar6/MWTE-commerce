@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-    const images = ["/glovez.jpg", "/jacket.jpg"];
+  const images = ["/bg3.jpg", "/bg4.jpg"];
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -11,28 +11,42 @@ const Hero = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-  <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
   return (
     <section
-    className="flex flex-col items-center justify-center h-screen  text-white text-center p-6 bg-cover opacity-80 bg-center bg-fixed transition-all duration-500 ease-in-out"
-    style={{ backgroundImage: `url(${images[currentImage]})` }}
-  >
-   <h2 className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white my-4">
-  FASHION <span className="mx-1 text-white">CHANGING</span> <span className="text-black" > ALWAYS </span>
-</h2>
-
-
-    
-
-    <Link
-      to="/shop"
-      className="mt-4 sm:mt-8 px-6 sm:px-10 py-2 sm:py-3 bg-gradient-to-r from-black to-blue-700 text-white text-sm sm:text-lg font-semibold  shadow-lg hover:from-black hover:to-blue-800 transition-all duration-300 transform hover:scale-105"
+      className="relative flex items-center justify-center h-screen text-white"
     >
-      SHOP NOW
-    </Link>
-  </section>
-  )
-}
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out"
+        style={{ backgroundImage: `url(${images[currentImage]})` }}
+      ></div>
 
-export default Hero
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-opacity-60"></div>
+
+      {/* Content */}
+      <div className="relative z-10 text-center px-4">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-wide">
+      <span className='text-gray-400 to-black bg-gradient-to-r'> FASHION </span> <span className="text-white">CHANGING</span>{' '}
+          <span className="text-white to-black bg-gradient-to-r  px-2 rounded-md">
+            ALWAYS
+          </span>
+        </h2>
+
+        <p className="mt-4 text-base sm:text-lg text-black font-bold max-w-2xl mx-auto">
+           <span className='text-gray-300 to-black bg-gradient-to-r'>Step into style that evolves with every trend. Discover unique fashion pieces just for you.</span>
+        </p>
+
+        <Link
+          to="/shop"
+          className="mt-8 inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-700 text-white font-semibold rounded-lg shadow-lg hover:from-blue-700 hover:to-purple-800 transition-all duration-300 transform hover:scale-105"
+        >
+          SHOP NOW
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
